@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementById Example</title>
+<style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading with unique ID -->
+    <h1 id="title">Welcome!</h1>
+    <!-- Button to trigger JavaScript -->
+    <button onclick="changeText()"> Click Me </button>
+    <script>
+        // Function that runs when button is clicked
+        function changeText() {
+            // Step 1: Select element using getElementById
+            let heading = document.getElementById("title");
+            // Step 2: Change the text content
+            heading.innerText = "Hello Students! 👋";
+            // Step 3: Change style dynamically
+            heading.style.color = "blue";
+        }
+    </script>
+</body>
+</html>
