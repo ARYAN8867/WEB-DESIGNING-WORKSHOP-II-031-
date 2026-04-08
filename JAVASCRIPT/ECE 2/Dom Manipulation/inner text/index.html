@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerText Example</title>
+    <style>
+        .hidden-text {
+            display: none; /* This text will be hidden */
+        }
+    </style>
+</head>
+<body>
+<!-- Visible text -->
+    <p id="greeting">Hello!</p>
+    <!-- Hidden text (will NOT be read by innerText) -->
+    <p id="hidden" class="hidden-text">This is hidden text</p>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="showText()">Show innerText</button>
+    <script>
+        // Select the paragraph element
+        const p = document.getElementById("greeting");
+        function showText() {
+            // Get visible text only
+            console.log("Visible Text:", p.innerText);
+        }
+        function changeText() {
+            // Change visible text
+            p.innerText = "Hello, JavaScript!";
+        }
+    </script>
+</body>
+</html>
