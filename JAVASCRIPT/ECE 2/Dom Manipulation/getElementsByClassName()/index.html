@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Example</title>
+</head>
+<body>
+<h2>📋 Student Attendance</h2>
+    <!-- Same class for all students -->
+    <p class="student">Rahul - Absent ❌</p>
+    <p class="student">Priya - Absent ❌</p>
+    <p class="student">Aman - Absent ❌</p>
+    <!-- Button -->
+    <button onclick="markPresent()">Mark All Present</button>
+    <script>
+        function markPresent() {
+            // Select all students
+            let students = document.getElementsByClassName("student");
+            // Loop through all
+            for (let i = 0; i < students.length; i++) {
+                students[i].innerText = "Present ✅";
+                students[i].style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>
