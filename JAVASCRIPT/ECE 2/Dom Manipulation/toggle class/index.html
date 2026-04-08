@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript classList Example</title>
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    padding:40px;
+    background:#6f5fc1;
+}
+
+p{
+    font-size:18px;
+    padding:10px;
+}
+.highlight{
+    background-color: rgb(174, 174, 16);   
+    font-weight: bold;          
+    border: 2px solid orange;   
+    padding:10px;
+}
+button{
+    margin:5px;
+    padding:8px 14px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<h2>JavaScript classList Demo</h2>
+
+<p id="demoText">
+This paragraph will change style when you press the buttons.
+</p>
+
+<button onclick="addHighlight()">Add Highlight</button>
+<button onclick="removeHighlight()">Remove Highlight</button>
+<button onclick="toggleHighlight()">Toggle Highlight</button>
+
+<script>
+
+const para = document.querySelector("#demoText");
+
+function addHighlight(){
+para.classList.add("highlight");
+}
+
+function removeHighlight(){
+    
+    para.classList.remove("highlight");
+}
+
+function toggleHighlight(){
+    para.classList.toggle("highlight");
+}
+</script>
+</body>
+</html>
