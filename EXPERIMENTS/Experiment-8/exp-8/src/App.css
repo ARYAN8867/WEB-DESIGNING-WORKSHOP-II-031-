@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: aquamarine;
+}
+h1{
+  color: black;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+p{
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+button {  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {  background-color: gray;
+}
