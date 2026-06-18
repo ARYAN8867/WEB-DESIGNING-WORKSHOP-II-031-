@@ -1,6 +1,9 @@
-import {useState} from 'react';
+import { useState } from "react";
+import "./App.css";
 function App() {
-  const[ count, setCount] = useState(0);
+  // 🔹 State creation
+  const [count, setCount] = useState(0);
+  // 🔹 Event functions
   const increment = () => {
     setCount(count + 1);
   };
@@ -10,15 +13,18 @@ function App() {
   const reset = () => {
     setCount(0);
   };
- return (
-  <div classname = "container">
-  <h1>Counter App</h1>
- 
- <h2>{count}</h2>
- <button onClick={increment}>Increment</button>
- <button onClick={decrement}>Decrement</button>
- <button onClick={reset}>Reset</button> 
- </div>
+  return (
+    <div className="container">
+      <h1>Counter App</h1>
+      {/* Display Count */}
+      <h2>{count}</h2>
+      {/* Buttons */}
+      <div className="buttons">
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+        <button onClick={reset}>Reset</button>
+      </div>
+    </div>
   );
 }
 export default App;
