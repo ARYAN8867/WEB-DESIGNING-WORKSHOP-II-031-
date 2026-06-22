@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest of 5 Numbers</title>
+</head>
+<body>
+
+    <h2>Largest Number Finder</h2>
+
+    <input type="number" id="n1" placeholder="Number 1"><br><br>
+    <input type="number" id="n2" placeholder="Number 2"><br><br>
+    <input type="number" id="n3" placeholder="Number 3"><br><br>
+    <input type="number" id="n4" placeholder="Number 4"><br><br>
+    <input type="number" id="n5" placeholder="Number 5"><br><br>
+
+    <button onclick="findLargest()">Find Largest</button>
+
+    <p id="result"></p>
+
+    <script>
+        function findLargest() {
+            let a = Number(document.getElementById("n1").value);
+            let b = Number(document.getElementById("n2").value);
+            let c = Number(document.getElementById("n3").value);
+            let d = Number(document.getElementById("n4").value);
+            let e = Number(document.getElementById("n5").value);
+
+            let largest = Math.max(a, b, c, d, e);
+
+            document.getElementById("result").innerText =
+                "Largest Number = " + largest;
+        }
+    </script>
+
+</body>
+</html>
