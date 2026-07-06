@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Events Example</title>
+  <style>
+    input, select {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+    }
+.focus {
+      border: 2px solid blue;
+      background-color: #e6f0ff;
+    }
+    .blur {
+      border: 2px solid gray;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Events Demo</h2>
+  <form id="myForm">
+    <!-- focus & blur -->
+    <input type="text" id="name" placeholder="Enter Name">
+    <!-- change -->
+    <select id="course">
+      <option value="">Select Course</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="BCA">BCA</option>
+    </select>
+    <!-- submit -->
+    <button type="submit">Submit</button>
+  </form>
+  <p id="output"></p>
+  <script>
+    const nameInput = document.getElementById("name");
+    const course = document.getElementById("course");
+    const form = document.getElementById("myForm");
+    const output = document.getElementById("output");
+    // 1. focus
+    nameInput.addEventListener("focus", function() {
+      this.classList.add("focus");
+      this.classList.remove("blur");
+    });
+    // 2. blur
+    nameInput.addEventListener("blur", function() {
+      this.classList.add("blur");
+      this.classList.remove("focus");
+    });
+    // 3. change
+    course.addEventListener("change", function() {
+      output.innerText = "Selected Course: " + this.value;
+    });
+    // 4. submit
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // stop page reload
+      output.innerText = "Form Submitted Successfully ✅";
+    });
+  </script>
+</body>
+</html>

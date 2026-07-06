@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyboard Events Example</title>
+  <style>
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+<h2>Keyboard Events Demo</h2>
+  <input type="text" id="keyDownBox" placeholder="Press any key (keydown)">
+  <input type="text" id="keyUpBox" placeholder="Release key (keyup)">
+  <input type="text" id="keyPressBox" placeholder="Type character (keypress)">
+  <p id="output"></p>
+  <script>
+    const output = document.getElementById("output");
+    // 1. keydown
+    document.getElementById("keyDownBox").addEventListener("keydown", function(event) {
+      output.innerText = "Key Down: " + event.key;
+    });
+    // 2. keyup
+    document.getElementById("keyUpBox").addEventListener("keyup", function(event) {
+      output.innerText = "Key Up: " + event.key;
+    });
+    // 3. keypress (deprecated but for learning)
+    document.getElementById("keyPressBox").addEventListener("keypress", function(event) {
+      output.innerText = "Key Pressed: " + event.key;
+    });
+  </script>
+</body>
+</html>
