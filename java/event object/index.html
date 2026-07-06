@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Object Example</title>
+  <style>
+    #box {
+      width: 300px;
+      height: 200px;
+      background: lightblue;
+      text-align: center;
+      line-height: 200px;
+      margin: 50px auto;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+<div id="box">Click Anywhere Inside</div>
+  <p id="output"></p>
+  <script>
+    const box = document.getElementById("box");
+    const output = document.getElementById("output");
+    box.addEventListener("click", function(e) {
+      // e.target → element clicked
+      console.log("Target:", e.target);
+      // e.type → type of event
+      console.log("Event Type:", e.type);
+      // e.clientX / e.clientY → mouse position
+      console.log("X:", e.clientX, "Y:", e.clientY);
+      // Show on screen
+      output.innerText =
+        "Type: " + e.type +
+        " | X: " + e.clientX +
+        " | Y: " + e.clientY;
+    });
+  </script>
+</body>
+</html>
