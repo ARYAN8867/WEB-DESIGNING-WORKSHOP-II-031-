@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial; max-width: 500px; margin: 40px auto; }
+    li { display: flex; justify-content: space-between; padding: 8px; border-bottom: 1px solid #eee; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button id="addBtn">Add</button>
+  <ul id="taskList"></ul>
+<script>
+    // Step 1: Load tasks from localStorage on page load
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+    function renderTasks() {
+      let list = document.getElementById("taskList");
+      list.innerHTML = "";
+      tasks.forEach((task, index) => {
+        let li = document.createElement("li");
+        li.innerText = task;
+        let delBtn = document.createElement("button");
+        delBtn.innerText = "Delete";
+        delBtn.addEventListener("click", function() {
+          tasks.splice(index, 1); // Remove task from array
+          saveTasks();            // Update localStorage
+          renderTasks();          // Re-render the list
+        });
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+    }
+    // Step 2: Add new task
+    document.getElementById("addBtn").addEventListener("click", function() {
+      let input = document.getElementById("taskInput");
+      let taskText = input.value.trim();
+      if (!taskText) return;
+      tasks.push(taskText);  // Add to array
+      saveTasks();           // Save to localStorage
+      renderTasks();         // Update display
+      input.value = "";
+    });
+    // Step 3: Initial render from saved data
+    renderTasks();
+  </script>
+</body>
+</html>
