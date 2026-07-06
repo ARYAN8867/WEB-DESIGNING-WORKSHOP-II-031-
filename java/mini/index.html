@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listener Demo</title>
+</head>
+<body>
+<input type="text" id="input" placeholder="Type something">
+<button id="btn">Click</button>
+<p id="output"></p>
+<script>
+let input = document.getElementById("input");
+let btn = document.getElementById("btn");
+let output = document.getElementById("output");
+// Click event
+btn.addEventListener("click", () => {
+    output.innerText = input.value;
+});
+// Key event
+input.addEventListener("keyup", () => {
+    console.log("Typing:", input.value);
+});
+// Mouse event
+btn.addEventListener("mouseover", () => {
+    btn.style.backgroundColor = "yellow";
+});
+// Change event
+input.addEventListener("change", () => {
+    alert("Value changed!");
+});
+</script>
+</body>
+</html>
