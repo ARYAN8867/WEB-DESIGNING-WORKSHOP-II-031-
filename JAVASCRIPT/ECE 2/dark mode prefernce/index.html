@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial; padding: 40px; transition: all 0.3s; }
+    body.dark { background: #1a1a2e; color: #eee; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>My App</h1>
+  <p>Your theme preference is remembered across refreshes.</p>
+  <button id="themeBtn">Toggle Dark Mode</button>
+<script>
+    // Step 1: On page load, check if a theme preference was saved
+    let savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+    // Step 2: When user clicks the button, toggle and save preference
+    document.getElementById("themeBtn").addEventListener("click", function() {
+      document.body.classList.toggle("dark");
+      // Step 3: Check current state and save it
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+</html>
