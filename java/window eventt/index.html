@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Events Example</title>
+  <style>
+    body {
+      height: 2000px; /* for scroll */
+      font-family: Arial;
+      margin: 20px;
+    }
+#status {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: lightgray;
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h2>Window Events Demo</h2>
+  <div id="status">
+    Status Box
+  </div>
+  <script>
+    const status = document.getElementById("status");
+    // 1. load event
+    window.addEventListener("load", function() {
+      console.log("Page fully loaded");
+      status.innerText = "Page Loaded ✅";
+    });
+    // 2. resize event
+    window.addEventListener("resize", function() {
+      console.log("Window resized");
+      status.innerText = "Width: " + window.innerWidth + "px";
+    });
+    // 3. scroll event
+    window.addEventListener("scroll", function() {
+      console.log("Scrolling...");
+      status.innerText = "Scroll Y: " + window.scrollY + "px";
+    });
+  </script>
+</body>
+</html>
