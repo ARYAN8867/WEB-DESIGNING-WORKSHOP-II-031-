@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>querySelectorAll Example</title>
+<style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .card {
+            border: 1px solid black;
+            padding: 15px;
+            margin: 10px auto;
+            width: 250px;
+        }
+        .action-btn {
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>📱 Social Media Feed</h2>
+    <!-- Post 1 -->
+    <div class="card">
+        📸 Nature Photo
+        <br>
+        <button class="action-btn">Like ❤️</button>
+    </div>
+    <!-- Post 2 -->
+    <div class="card">
+        🍔 Food Post
+        <br>
+        <button class="action-btn">Like ❤️</button>
+    </div>
+    <!-- Post 3 -->
+    <div class="card">
+        🏖️ Travel Post
+        <br>
+        <button class="action-btn">Like ❤️</button>
+    </div>
+    <!-- Button to like all -->
+    <button onclick="likeAll()">Like All Posts</button>
+    <script>
+        function likeAll() {
+            // 1️⃣ Select ALL buttons
+            let buttons = document.querySelectorAll(".action-btn");
+            // 2️⃣ Select ALL cards
+            let cards = document.querySelectorAll(".card");
+            // 3️⃣ Loop through buttons
+            buttons.forEach(function(button) {
+                button.innerText = "Liked ❤️";
+            });
+            // 4️⃣ Loop through cards
+            cards.forEach(function(card) {
+                card.style.backgroundColor = "lightyellow";
+            });
+        }
+    </script>
+</body>
+</html>
