@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="parent" style="padding:20px; background:lightgray;">
+    Parent
+    <button id="child">Click Me</button>
+  </div>
+  <script>
+    document.getElementById("parent").addEventListener("click", function() {
+      console.log("Parent Clicked");
+    }, true); // 👈 capturing enabled
+    document.getElementById("child").addEventListener("click", function() {
+      console.log("Child Clicked");
+    }, true);
+  </script>
+</body>
+</html>
