@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+</head>
+<body>
+    <!-- Paragraph element with id="demo" -->
+    <!-- JavaScript will access this element using its ID -->
+    <p id="demo">Hello Students</p>
+    <!-- Button element -->
+    <!-- When user clicks the button, changeText() function will run -->
+    <button onclick="changeText()">Click Me</button>
+
+    <script>
+        // This function will run when the button is clicked
+        function changeText() {
+            // Step 1: Select the element using its ID
+            // document = represents the whole HTML page
+            // getElementById("demo") finds the element with id="demo"
+            let element = document.getElementById("demo");
+            // Step 2: Change the text inside the paragraph
+            // innerText updates the visible text of the element
+            element.innerText = "DOM Manipulation is Easy!";
+        }
+    </script>
+</body>
+</html>
