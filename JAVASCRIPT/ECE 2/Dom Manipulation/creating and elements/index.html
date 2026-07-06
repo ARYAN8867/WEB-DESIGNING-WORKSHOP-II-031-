@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Element Creation Example</title>
+<style>
+/* ===== Page Styling ===== */
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f4f4;
+  padding:40px;
+}
+/* ===== Todo List Styling ===== */
+ul{
+  list-style-type:none;
+  padding:0;
+}
+/* Styling for list items */
+.todo-item{
+  background:#ffffff;
+  padding:10px;
+  margin:8px 0;
+  border-left:5px solid #007bff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+/* Old news item (for remove example) */
+.old-news{
+  background:#ffe5e5;
+  padding:10px;
+  margin:8px 0;
+  border-left:5px solid red;
+}
+button{
+  margin:5px;
+  padding:8px 14px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+<h2>JavaScript DOM Element Creation Demo</h2>
+<!-- Existing List -->
+<ul id="todo-list">
+  <li class="todo-item">Read a book</li>
+  <li class="todo-item">Complete homework</li>
+</ul>
+<br>
+<!-- Example element that will be removed -->
+<p class="old-news">This is outdated news.</p>
+<!-- Buttons to trigger JavaScript actions -->
+<button onclick="addItemEnd()">Add Item (Append)</button>
+<button onclick="addItemStart()">Add Item (Prepend)</button>
+<button onclick="removeNews()">Remove Old News</button>
+<script>
+/* ==============================
+   Function 1: Append Item
+   Adds new item at END of list
+   ============================== */
+function addItemEnd(){
+  // Step 1: Create a new <li> element
+  const newItem = document.createElement("li");
+  // Step 2: Add text inside the element
+  newItem.textContent = "Buy groceries";
+  // Step 3: Add a CSS class to style it
+  newItem.classList.add("todo-item");
+  // Step 4: Find the existing list
+  const list = document.querySelector("#todo-list");
+  // Step 5: Append the new item to the END of the list
+  list.appendChild(newItem);
+}
+
+/* ==============================
+   Function 2: Prepend Item
+   Adds new item at START of list
+   ============================== */
+function addItemStart(){
+  // Create new list item
+  const newItem = document.createElement("li");
+  // Add text
+  newItem.textContent = "Morning exercise";
+  // Add class for styling
+  newItem.classList.add("todo-item");
+  // Select list
+  const list = document.querySelector("#todo-list");
+  // Insert at beginning of list
+  list.prepend(newItem);
+}
+
+/* ==============================
+   Function 3: Remove Element
+   Deletes element from the page
+   ============================== */
+function removeNews(){
+  // Select the element with class "old-news"
+  const oldItem = document.querySelector(".old-news");
+  // Remove it from the DOM
+  oldItem.remove();
+}
+</script>
+</body>
+</html>
