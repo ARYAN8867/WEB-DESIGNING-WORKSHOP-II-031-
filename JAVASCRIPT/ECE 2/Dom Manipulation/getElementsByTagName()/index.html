@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>getElementsByTagName Example</title>
+</head>
+<body>
+<!-- Heading elements -->
+<!-- All these elements use the same HTML tag <h2> -->
+<h2>Student 1</h2>
+<h2>Student 2</h2>
+<h2>Student 3</h2>
+<!-- Button that triggers the JavaScript function -->
+<button onclick="changeHeading()">Change</button>
+<script>
+    // Function runs when the button is clicked
+    function changeHeading() {
+        // Step 1: Select all <h2> elements from the document
+        // getElementsByTagName returns a collection (array-like list)
+        let headings = document.getElementsByTagName("h2");
+        // Step 2: Access the first heading in the collection
+        // Index starts from 0, so headings[0] refers to the first <h2>
+        headings[0].innerText = "Topper Student";
+        // This replaces the text "Student 1" with "Topper Student"
+    }
+</script>
+</body>
+</html>
