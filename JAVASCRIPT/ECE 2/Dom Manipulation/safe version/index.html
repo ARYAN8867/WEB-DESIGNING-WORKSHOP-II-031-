@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe DOM Example</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    padding:40px;
+}
+#info-box{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    width:320px;
+}
+button{
+    margin-top:15px;
+    padding:10px 16px;
+    border:none;
+    background:#007bff;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0056b3;
+}
+</style>
+</head>
+<body>
+<h2>Safe JavaScript Content Example</h2>
+<div id="info-box">
+Click the button to load user info.
+</div>
+<button onclick="showInfo()">Load Info</button>
+<script>
+function showInfo(){
+const box = document.querySelector("#info-box");
+/* Safe content insertion */
+const name = "Alex";
+const role = "Developer";
+/* Clear old content */
+box.textContent = "";
+/* Create elements safely */
+const nameLine = document.createElement("p");
+nameLine.textContent = "Name: " + name;
+const roleLine = document.createElement("p");
+roleLine.textContent = "Role: " + role;
+/* Append elements */
+box.appendChild(nameLine);
+box.appendChild(roleLine);
+}
+</script>
+</body>
+</html>
