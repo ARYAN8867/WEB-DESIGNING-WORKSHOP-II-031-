@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change CSS with JavaScript</title>
+<style>
+/* Initial styling for the paragraph */
+#textBox{
+    font-size:20px;
+}
+</style>
+</head>
+<body>
+<!-- Paragraph element -->
+<!-- This element has id="textBox" so JavaScript can easily select it -->
+<p id="textBox">Learning JavaScript DOM</p>
+<!-- Button that triggers the JavaScript function -->
+<button onclick="changeStyle()">Change Style</button>
+
+<script>
+    // Function that runs when the button is clicked
+    function changeStyle() {
+        // Step 1: Select the element using its ID
+        // document represents the entire webpage
+        // getElementById("textBox") finds the element with id="textBox"
+        let element = document.getElementById("textBox");
+
+        // Step 2: Modify CSS properties using JavaScript
+        // Syntax: element.style.property = "value"
+        element.style.color = "white";      // Changes text color
+        element.style.background = "green"; // Changes background color
+        element.style.padding = "10px";     // Adds space inside the element
+        element.style.borderRadius = "5px"; // Adds rounded corners
+        element.style.width = "220px";      // Sets width of the box
+        element.style.textAlign = "center"; // Aligns text to the center
+    }
+</script>
+</body>
+</html>
